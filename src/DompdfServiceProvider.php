@@ -11,7 +11,7 @@ class DompdfServiceProvider implements ServiceProviderInterface
     public function register(Application $app)
     {
         $app['dompdf'] = $app->share(
-            function () {
+            function () use ($app) {
                 return new Dompdf();
             }
         );
